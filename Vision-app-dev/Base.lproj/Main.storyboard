@@ -23,6 +23,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.42745098040000001" green="0.73725490199999999" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Udf-C1-p6f" customClass="RoundedShadowImageView" customModule="Vision_app_dev" customModuleProvider="target">
+                                <rect key="frame" x="280" y="517" width="75" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="130" id="dDa-0f-ph4"/>
+                                    <constraint firstAttribute="height" constant="130" id="ffi-MT-xvT"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="okt-fe-8ug"/>
+                                    <constraint firstAttribute="width" constant="75" id="z5V-gH-ewX"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="IXu-Lo-Qvu">
+                                <rect key="frame" x="299" y="564" width="37" height="37"/>
+                            </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uta-89-Zyy" customClass="RoundedShadowView" customModule="Vision_app_dev" customModuleProvider="target">
                                 <rect key="frame" x="20" y="40" width="335" height="52"/>
                                 <subviews>
@@ -62,16 +74,10 @@
                                 <state key="normal" title="FLASH OFF">
                                     <color key="titleColor" red="0.84705882352941175" green="0.27843137254901962" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="flashBtnWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QEK-aP-8R9"/>
+                                </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Udf-C1-p6f" customClass="RoundedShadowImageView" customModule="Vision_app_dev" customModuleProvider="target">
-                                <rect key="frame" x="280" y="517" width="75" height="130"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="130" id="dDa-0f-ph4"/>
-                                    <constraint firstAttribute="height" constant="130" id="ffi-MT-xvT"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="okt-fe-8ug"/>
-                                    <constraint firstAttribute="width" constant="75" id="z5V-gH-ewX"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -79,8 +85,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Udf-C1-p6f" secondAttribute="trailing" constant="20" id="66e-tX-ijn"/>
                             <constraint firstItem="uta-89-Zyy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Hm0-VQ-GVt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uta-89-Zyy" secondAttribute="trailing" constant="20" id="TQM-fB-Jld"/>
+                            <constraint firstItem="IXu-Lo-Qvu" firstAttribute="centerY" secondItem="Udf-C1-p6f" secondAttribute="centerY" id="c4W-D0-8Um"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="g1z-cq-ngQ" secondAttribute="bottom" constant="20" id="cE6-cf-E3X"/>
                             <constraint firstItem="g1z-cq-ngQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="iG0-hU-zKD"/>
+                            <constraint firstItem="IXu-Lo-Qvu" firstAttribute="centerX" secondItem="Udf-C1-p6f" secondAttribute="centerX" id="pNA-ME-7hM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Udf-C1-p6f" secondAttribute="bottom" constant="20" id="vIL-Ve-LQI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -92,6 +100,7 @@
                         <outlet property="flashBtn" destination="g1z-cq-ngQ" id="Ghe-3l-lhR"/>
                         <outlet property="identificationLbl" destination="Wrl-UK-opY" id="FwO-uS-pWb"/>
                         <outlet property="roundedLblView" destination="uta-89-Zyy" id="axL-P5-Oam"/>
+                        <outlet property="spinner" destination="IXu-Lo-Qvu" id="wsZ-hN-9me"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
